@@ -5,4 +5,7 @@ I enjoy skiing and road biking, although I don't get to do them as much as I wou
 I also love to travel.  I hope to eventually see all 7 continents.  As of now, I have been to North America (duh!),
 Europe, Africa, and Australia.
 
+I took last quarter off from school for the birth of my daughter.  She was born on January 23rd and it has been
+a wild, but fun ride so far.  She is only 10 weeks old, but already it is hard to imagine life without her.
+
 # Programming Background:
