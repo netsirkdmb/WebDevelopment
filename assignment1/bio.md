@@ -7,6 +7,7 @@ Europe, Africa, and Australia.
 
 I took last quarter off from school for the birth of my daughter.  She was born on January 23rd and it has been
 a wild, but fun ride so far.  She is only 10 weeks old, but already it is hard to imagine life without her.
+My husband went back to work this week, so I am getting the hang of doing things on my own during the day now.
 
 # Programming Background:
 This is my third quarter in this program.  I took CS 165 summer quarter and had a lot of fun.  My favorite 
