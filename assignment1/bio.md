@@ -1,4 +1,4 @@
-Hi, my name is Kristen Dhuse.  I live in Renton, WA with my husband and daughter and our two cats.  I have  
+Hi, my name is Kristen Dhuse.  I live in Renton, WA with my husband, daughter, and our two cats.  I have  
 lived in western Washington my whole life.  I enjoy the proximity to the mountains as well as to the water.
 My original degree is in Mechanical Engineering from the University of Washington.  I really like Legos.
 I enjoy skiing and road biking, although I don't get to do them as much as I would like to anymore.
@@ -6,3 +6,8 @@ I also love to travel.  I hope to eventually see all 7 continents.  As of now, I
 Europe, Africa, and Australia.
 
 # Programming Background:
+This is my third quarter in this program.  I took CS 165 summer quarter and had a lot of fun.  My favorite 
+program that I made for that class was my final project where I made a game of Connect Four.  The game 
+can be played by either one or two players.  If you choose to play it with one player, you get to play 
+against the computer.  I made the computer player smart so that it is actually fairly challenging to win 
+against the computer player.
