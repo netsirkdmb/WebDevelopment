@@ -6,7 +6,8 @@ I also love to travel.  I hope to eventually see all 7 continents.  As of now, I
 Europe, Africa, and Australia.
 
 I took last quarter off from school for the birth of my daughter.  She was born on January 23rd and it has been
-a wild, but fun ride so far.  She is only 10 weeks old, but already it is hard to imagine life without her.
+a wild, but fun ride so far.  She is only 10 weeks old, but already it is hard to imagine life without her.  My
+challenge this quarter will be to balance school with taking care of my daughter during the day.
 
 # Programming Background:
 This is my third quarter in this program.  I took CS 165 summer quarter and had a lot of fun.  My favorite 
