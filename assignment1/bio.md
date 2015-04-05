@@ -11,3 +11,10 @@ program that I made for that class was my final project where I made a game of C
 can be played by either one or two players.  If you choose to play it with one player, you get to play 
 against the computer.  I made the computer player smart so that it is actually fairly challenging to win 
 against the computer player.
+
+Outside of school, my husband and I enjoy working on projects with our Raspberry Pi.  For our current project,
+we connected our Raspberry Pi to our garage door motors.  We wrote a program that allows us to access a website
+and check the status of our garage doors.  If one of the doors is open, we can click a button to close the door.
+It also works to open a door if it is closed.  We are still finishing up soldering the circuits to make it
+permanent.  It has been a simple, but fun project that I find really useful since I am always wondering if I
+remembered to shut the garage door when I am away from the house.
