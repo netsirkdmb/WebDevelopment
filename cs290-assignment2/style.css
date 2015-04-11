@@ -1,0 +1,57 @@
+tbody tr th:first-child {
+  font-style: italic;
+  font-weight: normal;
+}
+
+tbody tr td:nth-child(2){
+  color: red;
+}
+
+tbody tr td:nth-child(4){
+  color: blue;
+}
+
+tbody tr:nth-child(odd){
+  background-color: #90EE90;
+}
+
+tbody tr:nth-child(even){
+  background-color: #ADD8E6;
+}
+
+table, td, th{
+  border: thin solid black;
+}
+
+/*tbody tr td {
+  text-align: center;
+}
+
+td, th {
+  padding: 5px;
+}*/
+
+/* I used http://stackoverflow.com/questions/16986014/border-on-hover-element-of-list
+referenced in Piazza forum post @75 to figure out how to do this. */
+dt:hover + dd{
+  background-color: purple;
+}
+
+.outer-content {
+  margin-right: auto;
+  width: 75%;
+  background-color: #FFB6C1;
+  margin-top: 20px;
+}
+
+.inner-content {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 75%;
+  background-color: #ADD8E6;
+}
+
+img {
+  float: left;
+}
