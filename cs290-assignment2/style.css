@@ -23,14 +23,6 @@ table, td, th{
   border: thin solid black;
 }
 
-/*tbody tr td {
-  text-align: center;
-}
-
-td, th {
-  padding: 5px;
-}*/
-
 /* I used http://stackoverflow.com/questions/16986014/border-on-hover-element-of-list
 referenced in Piazza forum post @75 to figure out how to do this. */
 dt:hover + dd{
