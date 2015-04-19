@@ -21,3 +21,7 @@ Tasks: Worked on variables.js.
 Start: Sat, 18 Apr 2015 19:45:00 -0700
 End: Sat, 18 Apr 2015 20:45:00 -0700
 Tasks: Worked on objects.js.
+
+Start: Sat, 18 Apr 2015 21:00:57 -0700
+End: Sat, 18 Apr 2015 21:01:57 -0700
+Tasks: Committed changes to functions.js, objects.js, and variables.js files to complete Assignment 3 tasks.
