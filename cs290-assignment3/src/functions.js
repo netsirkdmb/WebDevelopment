@@ -32,17 +32,17 @@ var barType = typeof bar;
 */
 
 //your code here
-bar = function(doubleArray) {
-  for (var i = 0; i < doubleArray.length; i++) {
+bar = function (doubleArray) {
+  var i;
+  for (i = 0; i < doubleArray.length; i++) {
     if (typeof doubleArray[i] === "number") {
       doubleArray[i] *= 2;
-    }
-    else {
+    } else {
       return false;
     }
   }
   return true;
-}
+};
 //end your code
 
 /**
@@ -53,9 +53,9 @@ bar = function(doubleArray) {
 * @property {string} message - the commit message
 */
 function GitLog(hash, date, message) {
-    this.hash = hash;
-    this.date = date;
-    this.message = message;
+  this.hash = hash;
+  this.date = date;
+  this.message = message;
 }
 
 /**
@@ -85,7 +85,8 @@ function parseGit(logArray) {
   var hash;
   var date;
   var message;
-  for(var i = 0; i < logArray.length; i++) {
+  var i;
+  for (i = 0; i < logArray.length; i++) {
     firstSpace = logArray[i].indexOf(" ");
     firstQuote = logArray[i].indexOf("\"");
     hash = logArray[i].substring(0, firstSpace);
