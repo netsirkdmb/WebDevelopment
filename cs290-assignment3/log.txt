@@ -25,3 +25,11 @@ Tasks: Worked on objects.js.
 Start: Sat, 18 Apr 2015 21:00:57 -0700
 End: Sat, 18 Apr 2015 21:01:57 -0700
 Tasks: Committed changes to functions.js, objects.js, and variables.js files to complete Assignment 3 tasks.
+
+Start: Sat, 18 Apr 2015 21:00:00 -0700
+End: Sat, 18 Apr 2015 21:09:12 -0700
+Tasks: Committing updated log file.
+
+Start: Mon, 20 Apr 2015 20:45:00 -0700
+End: Mon, 20 Apr 2015 21:04:48 -0700
+Tasks: Updated functions.js and objects.js with changes suggested by jslint.
