@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Assignment 3, Part 2</title>
+    <script src="gist.js"></script>
+    <link rel="stylesheet" href="gist.css" type="text/css">
+  </head>
+  <body>
+    <div>
+      Number of Results:
+      <select id="max-results">
+        <option value="30">30</option>
+        <option value="60">60</option>
+        <option value="90">90</option>
+      </select>
+      <span class="language-checkbox">
+      <input type="checkbox" name="language" value="Python"> Python
+      </span>
+      <span class="language-checkbox">
+      <input type="checkbox" name="language" value="JSON"> JSON
+      </span>
+      <span class="language-checkbox">
+      <input type="checkbox" name="language" value="Javascript"> Javascript
+      </span>
+      <span class="language-checkbox">
+      <input type="checkbox" name="language" value="SQL"> SQL
+      </span>
+      <button type="button" onclick="requestGists()">Retrieve Gists</button>
+    </div>
+    <div class="result-column">
+      <h1>Gists</h1>
+      <div id="results">
+        <div id="gist-template" class="result-item">
+        <table>
+          <tr>
+            <td rowspan="3">
+              <div class="button">
+                <button type="button" onclick="markFavorite(this)">+</button>
+              </div>
+            </td>
+            <td>
+              <div class="description">
+                sample description
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="language">
+                sample language
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <a class="url" href="sample_url.com">sample_url.com</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="result-column">
+      <h1>Favorite Gists</h1>
+      <div id="favorites">
+      <p id="no-favorites">There are currently no saved favorites.</p>
+        <div id="favorite-template" class="result-item">
+          <table>
+          <tr>
+            <td rowspan="3">
+              <div class="button">
+                <button type="button" onclick="removeFavorite(this)">-</button>
+              </div>
+            </td>
+            <td>
+              <div class="description">
+                sample description
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="language">
+                sample language
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <a class="url" href="sample_url.com">sample_url.com</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
