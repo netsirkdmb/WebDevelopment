@@ -2,6 +2,7 @@
   error_reporting(E_ALL);
   ini_set('display_errors',1);
   header('Content-type: text/html');
+  session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +17,6 @@
          <input type="text" name="username">
          <input type="submit" value="Login">
        </form>';
-  session_start();
   $_SESSION = array();
   session_destroy();
 ?>
