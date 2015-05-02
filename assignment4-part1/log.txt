@@ -10,4 +10,8 @@ Start: Sat, 2 May 2015 07:40:00 -0700
 End: Sat, 2 May 2015 08:25:50 -0700
 Tasks: Finished multiplication table for multtable.php.
 
-Start: Sat, 2 May 2015 07:40:00 -0700
+Start: Sat, 2 May 2015 09:15:00 -0700
+End: Sat, 2 May 2015 09:56:28 -0700
+Tasks: Added code to loopback.php.
+
+Start: Sat, 2 May 2015 10:00:00 -0700

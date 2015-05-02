@@ -11,7 +11,14 @@
 </head>
 <body>
 <?php
-  
+  echo '<form action="content1.php" method="post">
+         Username: 
+         <input type="text" name="username">
+         <input type="submit" value="Login">
+       </form>';
+  session_start();
+  $_SESSION = array();
+  session_destroy();
 ?>
 </body>
 </html>
