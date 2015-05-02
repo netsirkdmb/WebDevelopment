@@ -19,3 +19,9 @@ End: Sat, 2 May 2015 12:55:45 -0700
 Tasks: Worked on code for login.php, content1.php, and content2.php.
 
 Start: Sat, 2 May 2015 12:56:00 -0700
+End: Sat, 2 May 2015 13:33:20 -0700
+Tasks: Uploaded to TEACH server for final testing.  Completed testing.
+
+Start: Sat, 2 May 2015 13:35:00 -0700
+End: Sat, 2 May 2015 13:36:00 -0700
+Tasks: Final commit for Assignment 4, Part 1.
