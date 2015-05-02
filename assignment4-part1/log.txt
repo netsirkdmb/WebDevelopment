@@ -1,0 +1,3 @@
+Start: Fri, 01 May 2015 20:15:00 -0700
+End: Fri, 01 May 2015 22:00:00 -0700
+Tasks: Created multtable.php, loopback.php, and login.php files.  Worked on input checking for multtable.php.
