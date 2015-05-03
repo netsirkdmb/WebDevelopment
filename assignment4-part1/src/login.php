@@ -3,6 +3,12 @@
   ini_set('display_errors',1);
   header('Content-type: text/html');
   session_start();
+  if(isset($_GET["action"]) && $_GET["action"] == "logout"){
+    $_SESSION = array();
+    session_destroy();
+    header("Location: login.php", true);
+    exit;
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,8 +23,6 @@
          <input type="text" name="username">
          <input type="submit" value="Login">
        </form>';
-  $_SESSION = array();
-  session_destroy();
 ?>
 </body>
 </html>

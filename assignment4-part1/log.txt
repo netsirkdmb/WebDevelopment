@@ -25,3 +25,7 @@ Tasks: Uploaded to TEACH server for final testing.  Completed testing.
 Start: Sat, 2 May 2015 13:35:00 -0700
 End: Sat, 2 May 2015 13:36:00 -0700
 Tasks: Final commit for Assignment 4, Part 1.
+
+Start: Sun, 3 May 2015 13:30:00 -0700
+End: Sun, 3 May 2015 14:35:00 -0700
+Tasks: Updated logout behavior based on Piazza discussions.

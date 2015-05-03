@@ -25,7 +25,7 @@
       $_SESSION["count"] = 0;
     }
   }
-  echo 'Hello ' . $_SESSION["username"] . ', you have visited this page ' . $_SESSION["count"] . ' times before.  Click <a href="login.php">here</a> to logout.<br>';
+  echo 'Hello ' . $_SESSION["username"] . ', you have visited this page ' . $_SESSION["count"] . ' times before.  Click <a href="login.php?action=logout">here</a> to logout.<br>';
   $_SESSION["count"]++;
   echo 'Click <a href="content2.php">here</a> for Content2.';
 ?>
