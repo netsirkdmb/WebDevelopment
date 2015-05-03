@@ -29,3 +29,7 @@ Tasks: Final commit for Assignment 4, Part 1.
 Start: Sun, 3 May 2015 13:30:00 -0700
 End: Sun, 3 May 2015 14:35:00 -0700
 Tasks: Updated logout behavior based on Piazza discussions.
+
+Start: Sun, 3 May 2015 14:35:00 -0700
+End: Sun, 3 May 2015 14:44:00 -0700
+Tasks: Fixed error in loopback.php after testing on OSU server.
