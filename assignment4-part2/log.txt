@@ -1,0 +1,27 @@
+Start: Tues, 05 May 2015 19:30:00 -0700
+End: Tues, 05 May 2015 20:30:00 -0700
+Tasks: Created createTable.php and password.php and tested logging on to my database on OSU server.
+
+Start: Thurs, 07 May 2015 11:30:00 -0700
+End: Thurs, 07 May 2015 13:00:00 -0700
+Tasks: Created a table in my database and created videoStore.php.  Worked on getting the form to add information to my table.
+
+Start: Thurs, 07 May 2015 15:30:00 -0700
+End: Thurs, 07 May 2015 16:30:00 -0700
+Tasks: Tried to figure out, unsuccessfully, how to get page to redirect back to videoStore.php from insertVideo.php after video is added.
+
+Start: Thurs, 07 May 2015 20:30:00 -0700
+End: Thurs, 07 May 2015 22:30:00 -0700
+Tasks: Added code to list all of the videos in the database in a table.  Combined insertVideo.php code into videoStore.php so insertVideo.php is no longer needed.
+
+Start: Fri, 08 May 2015 08:20:00 -0700
+End: Fri, 08 May 2015 08:50:00 -0700
+Tasks: Table formatting.
+
+Start: Fri, 08 May 2015 09:50:00 -0700
+End: Fri, 08 May 2015 10:50:00 -0700
+Tasks: Added "Delete ALL Videos!" button and refactored previous code.  createTable.php is no longer needed since it was combined into videoStore.php.
+
+Start: Fri, 08 May 2015 20:00:00 -0700
+End: Fri, 08 May 2015 23:00:00 -0700
+Tasks: Added filtering functionality.  Fixed error message behavior.  Completed testing.  Made section for adding a video prettier.
