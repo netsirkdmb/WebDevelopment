@@ -1,0 +1,20 @@
+h1 {
+  text-align: center;
+}
+
+.col-md-4 {
+  text-align: center;
+}
+
+#modal {
+  background-color: #FFF;
+  width: 600px;
+  border: #000 solid 1px;
+  border-radius: 10px;
+  box-shadow: 0 8px 6px -6px black;
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: none;
+}
