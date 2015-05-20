@@ -6,7 +6,7 @@ h1 {
   text-align: center;
 }
 
-#modal-add, #modal-settings {
+.modal-box-style {
   background-color: #FFF;
   width: 600px;
   border: #000 solid 1px;

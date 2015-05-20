@@ -7,7 +7,7 @@ if (Meteor.isClient) {
     },
     
     records: function () {
-      return Records.find({});
+      return Records.find({}, {sort: {createdAt: -1}});
     }
   });
   
@@ -30,6 +30,25 @@ if (Meteor.isClient) {
       e.preventDefault();
     }, 
     
+    "click #edit": function (e) {
+      Custombox.open({
+          target: "#modal-edit",
+          effect: "fadein"
+      });
+      $("#time_edit").attr("value", e.target.attributes.time.value);
+      $("#amount_edit").val(e.target.attributes.amount.value);
+      $("#record_id").attr("value", e.target.attributes.edit_id.value);
+      e.preventDefault();
+    },
+    
+    "click #delete": function (e) {
+      Custombox.open({
+          target: "#modal-delete",
+          effect: "fadein"
+      });
+      $("#delete_record_id").attr("value", e.target.attributes.delete_id.value);
+      e.preventDefault();
+    }
   });
   
   Template.add.events({
@@ -43,9 +62,54 @@ if (Meteor.isClient) {
         createdAt: new Date() // current time
       });
       
-      event.target.time.value = "";
-      event.target.amount.value = "";
+      e.target.time.value = "";
+      e.target.amount.value = "";
       
+      Custombox.close();
+      e.preventDefault();
+    },
+    
+    "click #cancel": function (e) {
+      $("#time").val("");
+      $("#amount").val("");
+      
+      Custombox.close();
+      e.preventDefault();
+    }
+  });
+  
+  Template.edit.events({
+    "submit #form-edit": function (e) {
+      var time = e.target.time_edit.value;
+      var amount = e.target.amount_edit.value;
+      var id = e.target.record_id.value;
+      Records.update(
+        {
+          _id:id
+        },
+        {
+          "$set": {
+          time: time,
+          amount: amount
+          }
+        }
+      );
+      
+      Custombox.close();
+      e.preventDefault();
+    }
+  });
+  
+  Template.delete_record.events({
+    "click #delete": function (e) {
+      var id = $("#delete_record_id").attr("value");
+      Records.remove(
+        {
+          _id:id
+        }
+      );
+      
+      Custombox.close();
       e.preventDefault();
     }
   });

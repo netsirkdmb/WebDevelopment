@@ -43,66 +43,119 @@
       </table>
     </div>
   </div>
-  <div id="modal-add">
+  <div class="modal-box-style" id="modal-add">
     {{> add}}
   </div>
-  <div class="btn-group" data-toggle="buttons" id="modal-settings">
-    <form class="form-horizontal">
-      <h3>Units: </h3>
-      <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary active">
-          <input type="radio" name="units" id="english" autocomplete="off" checked>English
-        </label>
-        <label class="btn btn-primary">
-          <input type="radio" name="units" id="metric" autocomplete="off">Metric
-        </label>
-      </div>
-      <h3>Data Storage Options: </h3>
-      <div class="radio">
-        <label>
-          <input type="radio" name="data-storage" id="keep-all" value="keep-all" checked>
-          Keep all data.
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="data-storage" id="most-recent" value="most-recent">
-          Keep most recent 7 days.
-        </label>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="button" class="btn btn-default" id="save" onclick="Custombox.close();">Save</button>
-          <button type="button" class="btn btn-danger" id="cancel" onclick="Custombox.close();">Cancel</button>
-        </div>
-      </div>
-    </form>
+  <div class="modal-box-style" id="modal-settings">
+    {{> settings}}
+  </div>
+  <div class="modal-box-style" id="modal-edit">
+    {{> edit}}
+  </div>
+  <div class="modal-box-style" id="modal-delete">
+    {{> delete_record}}
   </div>
 </body>
 
 <template name="record">
-  <tr><td>{{time}}</td><td>{{amount}}</td><td><button type="button" class="btn btn-default" id="edit" edit_id="{{_id}}">Edit</button></td></tr>
+  <tr>
+    <td>{{time}}</td>
+    <td>{{amount}}</td>
+    <td><button type="button" class="btn btn-default" id="edit" edit_id="{{_id}}" time="{{time}}" amount="{{amount}}">Edit</button>
+        <button type="button" class="btn btn-danger" id="delete" delete_id="{{_id}}">Delete</button></td></tr>
 </template>
 
 <template name="add">
   <form class="form-horizontal" id="form-add">
-      <div class="form-group">
-        <label for="time" class="col-sm-2 control-label">Time</label>
-        <div class="col-sm-10">
-          <input type="time" class="form-control" id="time">
-        </div>
+    <div class="form-group">
+      <label for="time" class="col-sm-2 control-label">Time</label>
+      <div class="col-sm-10">
+        <input type="time" class="form-control" id="time" required>
       </div>
-      <div class="form-group">
-        <label for="amount" class="col-sm-2 control-label">Amount</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="amount">
-        </div>
+    </div>
+    <div class="form-group">
+      <label for="amount" class="col-sm-2 control-label">Amount</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="amount" required>
       </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default" id="save">Save</button>
-          <button type="button" class="btn btn-danger" id="cancel" onclick="Custombox.close();">Cancel</button>
-        </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" id="save">Save</button>
+        <button type="button" class="btn btn-danger" id="cancel">Cancel</button>
       </div>
-    </form>
+    </div>
+  </form>
+</template>
+
+<template name="settings">
+  <form class="form-horizontal" id="form-settings">
+    <h3>Units: </h3>
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-primary active">
+        <input type="radio" name="units" id="english" autocomplete="off" checked>English
+      </label>
+      <label class="btn btn-primary">
+        <input type="radio" name="units" id="metric" autocomplete="off">Metric
+      </label>
+    </div>
+    <h3>Data Storage Options: </h3>
+    <div class="radio">
+      <label>
+        <input type="radio" name="data-storage" id="keep-all" value="keep-all" checked>
+        Keep all data.
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="data-storage" id="most-recent" value="most-recent">
+        Keep most recent 7 days.
+      </label>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" class="btn btn-default" id="save" onclick="Custombox.close();">Save</button>
+        <button type="button" class="btn btn-danger" id="cancel" onclick="Custombox.close();">Cancel</button>
+      </div>
+    </div>
+  </form>
+</template>
+
+<template name="edit">
+  <form class="form-horizontal" id="form-edit">
+    <div class="form-group">
+      <label for="time" class="col-sm-2 control-label">Time</label>
+      <div class="col-sm-10">
+        <input type="time" class="form-control" id="time_edit" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="amount" class="col-sm-2 control-label">Amount</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="amount_edit" required>
+      </div>
+    </div>
+    <input type="hidden" id="record_id">
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" id="save">Save</button>
+        <button type="button" class="btn btn-warning" id="cancel" onclick="Custombox.close();">Cancel</button>
+      </div>
+    </div>
+  </form>
+</template>
+
+<template name="delete_record">
+  <form class="form-horizontal" id="form-delete">
+    <div class="form-group">
+      <h4>Are you sure you want to delete this record?</h4>
+    </div>
+    <input type="hidden" id="delete_record_id">
+    <div class="form-group">
+      <div class="col-sm-10">
+        <button type="button" class="btn btn-danger" id="delete">Delete</button>
+        <button type="button" class="btn btn-warning" id="cancel" onclick="Custombox.close();">Cancel</button>
+      </div>
+    </div>
+  </form>
 </template>
