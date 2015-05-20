@@ -1,19 +1,11 @@
 Records = new Mongo.Collection("records");
 
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-  
   Template.body.helpers({
     lastFeeding: function () {
       return "00:00";
     },
+    
     records: function () {
       return Records.find({});
     }
@@ -22,19 +14,50 @@ if (Meteor.isClient) {
   // use custombox
   // http://dixso.github.io/custombox/
   Template.body.events({
-    "click #add": function ( e ) {
+    "click #add": function (e) {
       Custombox.open({
-          target: '#modal',
-          effect: 'fadein'
+          target: "#modal-add",
+          effect: "fadein"
       });
+      e.preventDefault();
+    },
+    
+    "click #settings": function (e) {
+      Custombox.open({
+          target: "#modal-settings",
+          effect: "fadein"
+      });
+      e.preventDefault();
+    }, 
+    
+  });
+  
+  Template.add.events({
+    "submit #form-add": function (e) {
+      var time = e.target.time.value;
+      var amount = e.target.amount.value;
+      
+      Records.insert({
+        time: time,
+        amount: amount,
+        createdAt: new Date() // current time
+      });
+      
+      event.target.time.value = "";
+      event.target.amount.value = "";
+      
       e.preventDefault();
     }
   });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
+  
+  Template.record.events({
+    "click #edit": function (e) {
+      // Custombox.open({
+          // target: "#modal-add",
+          // effect: "fadein"
+      // });
+      // e.preventDefault();
+      console.log(e.target.attributes.edit_id);
     }
   });
 }
