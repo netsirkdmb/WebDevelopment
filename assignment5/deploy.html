@@ -18,16 +18,6 @@
     <title>How to use Meteor!</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          
-        </div>
-        <div class="col-md-9">
-          
-        </div>
-      </div>
-    </div>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -41,7 +31,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href=".">Introduction<span class="sr-only">(current)</span></a></li>
+            <li><a href=".">Introduction</a></li>
             <li><a href="install_meteor.html">Install Meteor</a></li>
             <li><a href="getting_started.html">Getting Started</a></li>
             <li><a href="special_directories.html">Special Directories</a></li>
@@ -49,7 +39,7 @@
             <li><a href="adding_custombox.html">Adding Custombox</a></li>
             <li><a href="templates.html">Templates</a></li>
             <li><a href="collections.html">Collections</a></li>
-            <li><a href="deploy.html">Deploy</a></li>
+            <li class="active"><a href="deploy.html">Deploy</a></li>
             <li><a href="feeding_log_files.html">Files</a></li>
           </ul>
         </div>
@@ -59,12 +49,15 @@
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
-        <h1>Introduction</h1>
-        <p>This how-to will teach you how to make a website to track baby’s bottle feedings using Meteor.  
-        I chose Meteor because it seemed like it would allow me to eventually make something that I could 
-        use in an application on my phone in addition to using it in a browser.  In this how-to, I will 
-        also show you how to do a few things with Bootstrap and Custombox to make the website look good 
-        on many screen sizes and enter information into the log with a modal window.</p>
+        <h1>Deploy your App!</h1>
+        <p>Meteor makes it really easy to put your app on the internet where it can be accessed by the public.  
+        To deploy your app, open a Command Prompt window and change the directory to your Meteor project directory.  
+        Then, type:</p>
+        <p><kbd>meteor deploy myapp.meteor.com</kbd></p>
+        <p>Just like when we were creating a project, "myapp" represents the name of your project.  You should 
+        replace all references to "myapp" with the name of your project.  After Meteor finishes compiling and uploading
+        your project, you can go to <kbd>http://myapp.meteor.com</kbd> to check out your new app!  Go ahead and show
+        off your work to your friends!</p>
       </div>
       <div class="col-md-1"></div>
     </div>
@@ -74,7 +67,8 @@
       <div class="col-md-10">
         <nav>
           <ul class="pager">
-            <li><a href="install_meteor.html">Next</a></li>
+            <li><a href="collections.html">Previous</a></li>
+            <li><a href="feeding_log_files.html">Next</a></li>
           </ul>
         </nav>
       </div>

@@ -3,7 +3,21 @@ var Records = new Mongo.Collection("records");
 if (Meteor.isClient) {
   Template.body.helpers({
     lastFeeding: function () {
-      return "00:00";
+      var now = new Date();
+      var previousFeeding = Records.findOne({}, {sort: {createdAt: -1}});
+      var previousFeedingDate = new Date(previousFeeding.createdAt);
+      var hour = previousFeeding.time.split(":")[0];
+      var minute = previousFeeding.time.split(":")[1];
+      previousFeedingDate.setHours(hour);
+      previousFeedingDate.setMinutes(minute);
+      var timeDifference = moment.duration(now - previousFeedingDate);
+      var display = "";
+      if (timeDifference.days() != 0) {
+        display += timeDifference.days();
+        display += " days, ";
+      }
+      display = display + timeDifference.hours() + " hours, " + timeDifference.minutes() + " minutes";
+      return display;
     },
     
     records_array: function () {

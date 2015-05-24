@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Meteor How-To</a>
+          <a class="navbar-brand" href=".">Meteor How-To</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -39,6 +39,7 @@
             <li><a href="adding_custombox.html">Adding Custombox</a></li>
             <li><a href="templates.html">Templates</a></li>
             <li class="active"><a href="collections.html">Collections</a></li>
+            <li><a href="deploy.html">Deploy</a></li>
             <li><a href="feeding_log_files.html">Files</a></li>
           </ul>
         </div>
@@ -53,9 +54,10 @@
         to tables in MySQL).  You can create a new collection as follows:</p>
         <p><code><span class="nt">var</span> <span class="b">Records = </span><span class="nt">new</span> <span class="b">Mongo.Collection(</span><span>"records"</span><span class="b">);</span></code></p>
         <p>This code creates a new JavaScript object called Records that interfaces with 
-        a MongoDB collection called records.  This code must be outside of the 
-        <code>Meteor.isClient</code> and <code>Meteor.isServer</code> sections.  It is the 
-        first line in my JavaScript file.</p>
+        a MongoDB collection called records.  This code is outside of the 
+        <code>Meteor.isClient</code> and <code>Meteor.isServer</code> sections because it 
+        needs to be seen by both the client and the server.  It is the first line in my 
+        JavaScript file.</p>
         <p>To create the array of database items that is iterated through in the 
         <code>{{#each records_array}}</code> section, you must use a function in the 
         <code>Template.body.helpers({some code})</code> section to find and return each array 
@@ -101,7 +103,9 @@
           <span>);</span>
         </code></pre></div><br>
         <p>You can delete an item in the database by calling the remove function and specifying 
-        the _id value of the item that you want to remove.</p><br>
+        the _id value of the item that you want to remove.  I chose to use this value because it 
+        is unique to each database item and it is automatically added as a property to each database 
+        item by Meteor.  You can choose any query that matches the records that you want to delete.</p><br>
         <div class="highlight"><pre><code class="language-html" data-lang="html">
           <span class="nt">var</span> <span>id = $(</span><span class="s">"#delete_record_id"</span><span>).attr(</span><span class="s">"value"</span><span>);</span>
           
@@ -119,7 +123,7 @@
         <nav>
           <ul class="pager">
             <li><a href="templates.html">Previous</a></li>
-            <li><a href="feeding_log_files.html">Next</a></li>
+            <li><a href="deploy.html">Next</a></li>
           </ul>
         </nav>
       </div>
