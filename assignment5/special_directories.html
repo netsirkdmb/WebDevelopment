@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery -->
+      <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- stylesheet -->
+    <link href="how_to.css" rel="stylesheet">
+    <title>How to use Meteor!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Meteor How-To</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href=".">Introduction</a></li>
+            <li><a href="install_meteor.html">Install Meteor</a></li>
+            <li><a href="getting_started.html">Getting Started</a></li>
+            <li class="active"><a href="special_directories.html">Special Directories</a></li>
+            <li><a href="adding_bootstrap.html">Adding Bootstrap</a></li>
+            <li><a href="adding_custombox.html">Adding Custombox</a></li>
+            <li><a href="templates.html">Templates</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="feeding_log_files.html">Files</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h1>Special Directories</h1>
+        <p>Meteor automatically includes all CSS and JavaScript files in the project directory eliminating the need to link to them 
+        in your HTML file.  You should be careful not to add extra CSS and JavaScript files to your project folder since they will 
+        always be sent to server and/or client and they will affect the performance of your site.  By default, Meteor sends HTML and 
+        CSS files to the client, while JavaScript files are sent to both the client and the server.  For JavaScript files, you can 
+        control which section of code is used with the Meteor.isClient and Meteor.isServer variables.  If you want Meteor to load a 
+        file differently from the default behavior described above, you must use the following special directories: /client, /server, 
+        /public, and /private.  I will describe what each directory is used for below.</p><br>
+        <h3>/client</h3>
+        <p>The /client directory holds any files that you only want sent to the client.  In this project, I am using it to store the 
+        files for Custombox.  Inside, the /client directory, you can also have a /compatibility directory.  This directory is used 
+        for JavaScript files that use global variables.  Since Custombox depends on global variables, some of its files are stored 
+        in the /compatibility directory.  I will go over adding Custombox to your project later.</p><br>
+        <h3>/server</h3>
+        <p>Logically, the /server directory is for any files that are only sent to the server.  These may include files that have 
+        data that you don’t want visible to the client.</p><br>
+        <h3>/public</h3>
+        <p>The /public directory is used for files that are sent un-modified to the client like images.</p><br>
+        <h3>/private</h3>
+        <p>The /private directory is only accessible from the server and will not be covered in this project.</p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <nav>
+          <ul class="pager">
+            <li><a href="getting_started.html">Previous</a></li>
+            <li><a href="adding_bootstrap.html">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </body>
+</html>

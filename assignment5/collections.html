@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery -->
+      <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- stylesheet -->
+    <link href="how_to.css" rel="stylesheet">
+    <title>How to use Meteor!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Meteor How-To</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href=".">Introduction</a></li>
+            <li><a href="install_meteor.html">Install Meteor</a></li>
+            <li><a href="getting_started.html">Getting Started</a></li>
+            <li><a href="special_directories.html">Special Directories</a></li>
+            <li><a href="adding_bootstrap.html">Adding Bootstrap</a></li>
+            <li><a href="adding_custombox.html">Adding Custombox</a></li>
+            <li><a href="templates.html">Templates</a></li>
+            <li class="active"><a href="collections.html">Collections</a></li>
+            <li><a href="feeding_log_files.html">Files</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h1>Collections</h1>
+        <p>Meteor uses a MongoDB database to store data as a collection (this is similar 
+        to tables in MySQL).  You can create a new collection as follows:</p>
+        <p><code><span class="nt">var</span> <span class="b">Records = </span><span class="nt">new</span> <span class="b">Mongo.Collection(</span><span>"records"</span><span class="b">);</span></code></p>
+        <p>This code creates a new JavaScript object called Records that interfaces with 
+        a MongoDB collection called records.  This code must be outside of the 
+        <code>Meteor.isClient</code> and <code>Meteor.isServer</code> sections.  It is the 
+        first line in my JavaScript file.</p>
+        <p>To create the array of database items that is iterated through in the 
+        <code>{{#each records_array}}</code> section, you must use a function in the 
+        <code>Template.body.helpers({some code})</code> section to find and return each array 
+        item to the records_array variable.  In the example below, I also sort the items so 
+        that they are returned with the most recent entry to the database first.</p><br>
+        <div class="highlight"><pre><code class="language-html" data-lang="html">
+          <span>records_array:</span> <span class="nt">function</span> <span>() {</span>
+          <span class="nt">  return</span> <span>Records.find({}, {sort: {createdAt: -1}});</span>
+          <span>}</span>
+        </code></pre></div><br>
+        <p>If you want to add an item to the database, you can do it with a call to the insert 
+        function.  In my feeding log, I used the following code to add information about the 
+        time of a feeding and the amount the baby ate as well as the day that the feeding occurred.</p><br>
+        <div class="highlight"><pre><code class="language-html" data-lang="html">
+          <span class="nt">var</span> <span>userTime = e.target.time.value;</span>
+          <span class="nt">var</span> <span>userAmount = e.target.amount.value;</span>
+          
+          <span>Records.insert({</span>
+          <span>  time: userTime,</span>
+          <span>  amount: userAmount,</span>
+          <span>  createdAt:</span> <span class="nt">new</span> <span>Date()</span> <span class="c">// current time</span>
+          <span>});</span>
+        </code></pre></div><br>
+        <p>If you want to update an item in the database, you can do it with a call to the update 
+        function.  You can specify which item should be updated using the item’s unique _id value.  
+        Since I didn’t want to update the date a feeding was added to the log, I used the Mongo 
+        <code>$set</code> command to ensure that I was just updating the time and amount keys.</p><br>
+        <div class="highlight"><pre><code class="language-html" data-lang="html">
+          <span class="nt">var</span> <span>userTime = e.target.time_edit.value;</span>
+          <span class="nt">var</span> <span>userAmount = e.target.amount_edit.value;</span>
+          <span class="nt">var</span> <span>id = e.target.record_id.value;</span>
+          
+          <span>Records.update(</span>
+          <span>  {</span>
+          <span>    _id: id</span>
+          <span>  },</span>
+          <span>  {</span>
+          <span class="s">    "$set"</span><span>: {</span>
+          <span>      time: userTime,</span>
+          <span>      amount: userAmount,</span>
+          <span>    }</span>
+          <span>  }</span>
+          <span>);</span>
+        </code></pre></div><br>
+        <p>You can delete an item in the database by calling the remove function and specifying 
+        the _id value of the item that you want to remove.</p><br>
+        <div class="highlight"><pre><code class="language-html" data-lang="html">
+          <span class="nt">var</span> <span>id = $(</span><span class="s">"#delete_record_id"</span><span>).attr(</span><span class="s">"value"</span><span>);</span>
+          
+          <span>Records.remove({</span>
+          <span>  _id: id</span>
+          <span>});</span>
+        </code></pre></div><br>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <nav>
+          <ul class="pager">
+            <li><a href="templates.html">Previous</a></li>
+            <li><a href="feeding_log_files.html">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </body>
+</html>

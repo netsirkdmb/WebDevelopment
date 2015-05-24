@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery -->
+      <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- stylesheet -->
+    <link href="how_to.css" rel="stylesheet">
+    <title>How to use Meteor!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Meteor How-To</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href=".">Introduction</a></li>
+            <li><a href="install_meteor.html">Install Meteor</a></li>
+            <li><a href="getting_started.html">Getting Started</a></li>
+            <li><a href="special_directories.html">Special Directories</a></li>
+            <li><a href="adding_bootstrap.html">Adding Bootstrap</a></li>
+            <li class="active"><a href="adding_custombox.html">Adding Custombox</a></li>
+            <li><a href="templates.html">Templates</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="feeding_log_files.html">Files</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h1>Adding Custombox to your Project</h1>
+        <p>On my website, I wanted to be able to add another feeding without needing to have the 
+        required fields visible all of the time.  Because Meteor apps work in real time, they do 
+        not allow you to use multiple pages for your app.  Therefore, I could not use a button for 
+        adding a feeding that would link the user to a separate page with a form for inputting the 
+        ata.  I decided to solve this problem with Custombox modal windows.  That way, when the 
+        user clicks the button to add a feeding, a window pops up and allows the user to enter 
+        the required information and save it.</p>
+        <p>Custombox did not have the option to use a CDN for hosting the required files so you 
+        must download them and host them on your server.  You can download Custombox and learn 
+        about it at this <a href"http://dixso.github.io/custombox/">website</a>.  Instead of 
+        including the files as described in the “How to use” section of this 
+        <a href"http://dixso.github.io/custombox/">website</a>, you need to open up the “dist” 
+        directory in the zip file that you downloaded from this 
+        <a href"http://dixso.github.io/custombox/">website</a>.  The “dist” directory contains three 
+        files.  Copy the custombox.min.css file to the /client directory in your Meteor project 
+        folder.  Then copy the custombox.min.js and legacy.min.js files to the /compatibility 
+        directory that is inside the /client directory in your Meteor project folder.  Now you 
+        are ready to use Custombox on your Meteor project.  Choose which effect you want to use 
+        on your modal window (I chose the Fadein effect) and add the following code to the 
+        <code>Meteor.isClient</code> section of your JavaScript file.  Since we are using Meteor, 
+        this code is slightly different from the code that appears on the Custombox website in the 
+        “How to use” section.</p><br>
+        <div class="highlight"><pre><code class="language-javascript" data-lang="javascript">
+          <span>Template.body.events({</span>
+          <span class="s">  "click #add"</span><span>:</span> <span class="nt">function</span> <span>(e) {</span>
+          <span>    Custombox.open({</span>
+          <span>      target:</span> <span class="s">"#modal-add"</span><span>,</span>
+          <span>      effect:</span> <span class="s">"fadein"</span>
+          <span>    });</span>
+          <span >    e.preventDefault();</span>
+          <span>  }</span>
+          <span>});</span>
+        </code></pre></div><br>
+        <p><strong>Note:</strong> I have given my “Add Feeding” button an id of “add” and I have created 
+        a div with an id of “modal-add” that contains all of the HTML for the form to add feeding information 
+        to my log.  In my CSS file, I have given my modal div some styling to make it pretty and I have 
+        set its display to none so that it doesn’t show up unless the “Add Feeding” button is clicked 
+        and the Custombox modal window appears.</p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <nav>
+          <ul class="pager">
+            <li><a href="adding_bootstrap.html">Previous</a></li>
+            <li><a href="templates.html">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </body>
+</html>

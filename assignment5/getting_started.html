@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery -->
+      <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- stylesheet -->
+    <link href="how_to.css" rel="stylesheet">
+    <title>How to use Meteor!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Meteor How-To</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href=".">Introduction</a></li>
+            <li><a href="install_meteor.html">Install Meteor</a></li>
+            <li class="active"><a href="getting_started.html">Getting Started</a></li>
+            <li><a href="special_directories.html">Special Directories</a></li>
+            <li><a href="adding_bootstrap.html">Adding Bootstrap</a></li>
+            <li><a href="adding_custombox.html">Adding Custombox</a></li>
+            <li><a href="templates.html">Templates</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="feeding_log_files.html">Files</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h1>Getting Started</h1>
+        <p>Open a Command Prompt window and change the directory to the location that you want 
+        to save your Meteor project to.  Keep in mind that when you create a Meteor project, 
+        it will make a new folder and automatically create the files that you will need to make 
+        your website.  Now, type:</p>
+        <p><kbd>meteor create myapp</kbd></p>
+        <p>Here, "myapp" represents the name of your project.  You should replace all references 
+        to "myapp" with the name of your project.  If you change to the new myapp directory, you 
+        will see a .meteor folder and the following three files: myapp.css, myapp.html, and myapp.js.  
+        These are the files that you will be modifying to create your website.  Meteor includes some 
+        sample code in these files so that you can see a working website immediately.  To start the 
+        Meteor server and look at the sample website, make sure your Command Prompt window is 
+        looking at your project folder and type <kbd>meteor</kbd> to start up your Meteor server.  Then, you 
+        can go to your web browser and type <kbd>http://localhost:3000</kbd> into the address bar.  This will 
+        show you the sample website that Meteor gives you when it makes your project files.  If you 
+        keep this window open, you can check back frequently to see the changes and progress you are 
+        making on your website.  It will also show any errors that occur as a result of problems 
+        with your code.</p>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <nav>
+          <ul class="pager">
+            <li><a href="install_meteor.html">Previous</a></li>
+            <li><a href="special_directories.html">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </body>
+</html>

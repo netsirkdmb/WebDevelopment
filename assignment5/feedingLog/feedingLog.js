@@ -1,4 +1,4 @@
-Records = new Mongo.Collection("records");
+var Records = new Mongo.Collection("records");
 
 if (Meteor.isClient) {
   Template.body.helpers({
@@ -6,7 +6,7 @@ if (Meteor.isClient) {
       return "00:00";
     },
     
-    records: function () {
+    records_array: function () {
       return Records.find({}, {sort: {createdAt: -1}});
     }
   });
@@ -16,24 +16,16 @@ if (Meteor.isClient) {
   Template.body.events({
     "click #add": function (e) {
       Custombox.open({
-          target: "#modal-add",
-          effect: "fadein"
+        target: "#modal-add",
+        effect: "fadein"
       });
       e.preventDefault();
     },
     
-    "click #settings": function (e) {
-      Custombox.open({
-          target: "#modal-settings",
-          effect: "fadein"
-      });
-      e.preventDefault();
-    }, 
-    
     "click #edit": function (e) {
       Custombox.open({
-          target: "#modal-edit",
-          effect: "fadein"
+        target: "#modal-edit",
+        effect: "fadein"
       });
       $("#time_edit").attr("value", e.target.attributes.time.value);
       $("#amount_edit").val(e.target.attributes.amount.value);
@@ -43,8 +35,8 @@ if (Meteor.isClient) {
     
     "click #delete": function (e) {
       Custombox.open({
-          target: "#modal-delete",
-          effect: "fadein"
+        target: "#modal-delete",
+        effect: "fadein"
       });
       $("#delete_record_id").attr("value", e.target.attributes.delete_id.value);
       e.preventDefault();
@@ -53,12 +45,12 @@ if (Meteor.isClient) {
   
   Template.add.events({
     "submit #form-add": function (e) {
-      var time = e.target.time.value;
-      var amount = e.target.amount.value;
+      var userTime = e.target.time.value;
+      var userAmount = e.target.amount.value;
       
       Records.insert({
-        time: time,
-        amount: amount,
+        time: userTime,
+        amount: userAmount,
         createdAt: new Date() // current time
       });
       
@@ -80,17 +72,17 @@ if (Meteor.isClient) {
   
   Template.edit.events({
     "submit #form-edit": function (e) {
-      var time = e.target.time_edit.value;
-      var amount = e.target.amount_edit.value;
+      var userTime = e.target.time_edit.value;
+      var userAmount = e.target.amount_edit.value;
       var id = e.target.record_id.value;
       Records.update(
         {
-          _id:id
+          _id: id
         },
         {
           "$set": {
-          time: time,
-          amount: amount
+            time: userTime,
+            amount: userAmount
           }
         }
       );
@@ -103,25 +95,12 @@ if (Meteor.isClient) {
   Template.delete_record.events({
     "click #delete": function (e) {
       var id = $("#delete_record_id").attr("value");
-      Records.remove(
-        {
-          _id:id
-        }
-      );
+      Records.remove({
+        _id: id
+      });
       
       Custombox.close();
       e.preventDefault();
-    }
-  });
-  
-  Template.record.events({
-    "click #edit": function (e) {
-      // Custombox.open({
-          // target: "#modal-add",
-          // effect: "fadein"
-      // });
-      // e.preventDefault();
-      console.log(e.target.attributes.edit_id);
     }
   });
 }

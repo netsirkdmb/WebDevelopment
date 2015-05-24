@@ -24,9 +24,7 @@
       <p></p>
       <h3>{{lastFeeding}}</h3>
     </div>
-    <div class="col-md-4">
-      <a href="settings.html"><button type="button" class="btn btn-default btn-lg" id="settings">Settings</button></a>
-    </div>
+    <div class="col-md-4"></div>
   </div>
   <br>
   <div class="row">
@@ -36,7 +34,7 @@
           <tr><th>Time</th><th>Amount</th><th>Edit</th></tr>
         </thead>
         <tbody>
-          {{#each records}}
+          {{#each records_array}}
             {{> record}}
           {{/each}}
         </tbody>
@@ -45,9 +43,6 @@
   </div>
   <div class="modal-box-style" id="modal-add">
     {{> add}}
-  </div>
-  <div class="modal-box-style" id="modal-settings">
-    {{> settings}}
   </div>
   <div class="modal-box-style" id="modal-edit">
     {{> edit}}
@@ -83,39 +78,6 @@
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default" id="save">Save</button>
         <button type="button" class="btn btn-danger" id="cancel">Cancel</button>
-      </div>
-    </div>
-  </form>
-</template>
-
-<template name="settings">
-  <form class="form-horizontal" id="form-settings">
-    <h3>Units: </h3>
-    <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-primary active">
-        <input type="radio" name="units" id="english" autocomplete="off" checked>English
-      </label>
-      <label class="btn btn-primary">
-        <input type="radio" name="units" id="metric" autocomplete="off">Metric
-      </label>
-    </div>
-    <h3>Data Storage Options: </h3>
-    <div class="radio">
-      <label>
-        <input type="radio" name="data-storage" id="keep-all" value="keep-all" checked>
-        Keep all data.
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="data-storage" id="most-recent" value="most-recent">
-        Keep most recent 7 days.
-      </label>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="button" class="btn btn-default" id="save" onclick="Custombox.close();">Save</button>
-        <button type="button" class="btn btn-danger" id="cancel" onclick="Custombox.close();">Cancel</button>
       </div>
     </div>
   </form>
